@@ -1,19 +1,46 @@
-// Simple Search Function
+// Advanced Filter Function
 function filterTools() {
-    let input = document.getElementById('searchInput');
-    let filter = input.value.toUpperCase();
-    let cards = document.querySelectorAll('.card');
-    let titles = document.querySelectorAll('.category-section');
+    let input = document.getElementById('searchInput').value.toUpperCase();
+    
+    // Get all category sections (e.g., Subdomain, Port Scanning, etc.)
+    let sections = document.querySelectorAll('.category-section');
 
-    // Loop through all cards and hide those who don't match the search query
-    cards.forEach(card => {
-        let txtValue = card.getAttribute('data-name');
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            card.style.display = "";
+    sections.forEach(section => {
+        let cards = section.querySelectorAll('.card');
+        let hasVisibleCards = false;
+
+        // Loop through cards inside this section
+        cards.forEach(card => {
+            let name = card.getAttribute('data-name').toUpperCase();
+            
+            // If matches search OR if search is empty
+            if (name.indexOf(input) > -1) {
+                card.style.display = ""; // Show card
+                hasVisibleCards = true;
+            } else {
+                card.style.display = "none"; // Hide card
+            }
+        });
+
+        // Toggle the entire section based on whether it has visible cards
+        if (hasVisibleCards) {
+            section.style.display = ""; // Show section
         } else {
-            card.style.display = "none";
+            section.style.display = "none"; // Hide section
         }
     });
+}
 
-    // Optional: You could add logic here to hide section titles if all their cards are hidden.
+// Mobile Menu Toggle
+function toggleMenu() {
+    const menu = document.getElementById('mobile-menu');
+    if (menu.style.display === "flex") {
+        menu.style.display = "none";
+    } else {
+        menu.style.display = "flex";
+    }
+}
+
+function closeMenu() {
+    document.getElementById('mobile-menu').style.display = "none";
 }
