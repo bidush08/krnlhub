@@ -3,58 +3,224 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bug Bounty Hunter // Dashboard</title>
+    <title>KRNLHUB // Red Team Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <h1>krnlhub</h1>
-        <p class="subtitle">Methods, Checklists, and Automated Tools for the Modern Pentester</p>
+        <div class="header-content">
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <h1>KRNLHUB</h1>
+        </div>
+        
+        <p class="subtitle">Methods, Checklists, and Automated Tools</p>
         
         <div class="search-container">
-            <input type="text" id="searchInput" placeholder="Search for tools (e.g., 'nmap', 'xss')..." onkeyup="filterTools()">
+            <input type="text" id="searchInput" placeholder="Search arsenal (e.g., 'bucket', 'xss', 'brute')..." onkeyup="filterTools()">
         </div>
     </header>
 
     <div class="container">
         <aside class="sidebar">
-            <h3>Categories</h3>
+            <h3>// SYSTEM_ROOT</h3>
             <div class="nav-links">
-                <a href="#recon">Recon & Subdomains</a>
-                <a href="#port">Port Scanning</a>
-                <a href="#technologies">Technologies</a>
-                <a href="#content">Content Discovery</a>
-                <a href="#xss">XSS Injection</a>
-                <a href="#secrets">Secrets & Git</a>
-                <a href="#vuln">Vulnerability Scanners</a>
+                <a href="#subdomain" onclick="closeMenu()">Subdomain Enum</a>
+                <a href="#port" onclick="closeMenu()">Port Scanning</a>
+                <a href="#screens" onclick="closeMenu()">Screenshots</a>
+                <a href="#tech" onclick="closeMenu()">Technologies</a>
+                <a href="#content" onclick="closeMenu()">Content Discovery</a>
+                <a href="#links" onclick="closeMenu()">Links & JS</a>
+                <a href="#git" onclick="closeMenu()">Git & Secrets</a>
+                <a href="#cloud" onclick="closeMenu()">Cloud & Buckets</a>
+                <a href="#cms" onclick="closeMenu()">CMS & WP</a>
+                <a href="#utils" onclick="closeMenu()">Utilities</a>
+                <a href="#wordlists" onclick="closeMenu()">Wordlists</a>
+                <a href="#xss" onclick="closeMenu()">XSS Guides</a>
             </div>
         </aside>
 
+        <div id="mobile-menu" class="mobile-menu">
+            <div class="mobile-nav-links">
+                <a href="#subdomain" onclick="toggleMenu()">Subdomain Enum</a>
+                <a href="#port" onclick="toggleMenu()">Port Scanning</a>
+                <a href="#screens" onclick="toggleMenu()">Screenshots</a>
+                <a href="#tech" onclick="toggleMenu()">Technologies</a>
+                <a href="#content" onclick="toggleMenu()">Content Discovery</a>
+                <a href="#links" onclick="toggleMenu()">Links & JS</a>
+                <a href="#git" onclick="toggleMenu()">Git & Secrets</a>
+                <a href="#cloud" onclick="toggleMenu()">Cloud & Buckets</a>
+                <a href="#cms" onclick="toggleMenu()">CMS & WP</a>
+                <a href="#utils" onclick="toggleMenu()">Utilities</a>
+                <a href="#wordlists" onclick="toggleMenu()">Wordlists</a>
+                <a href="#xss" onclick="toggleMenu()">XSS Guides</a>
+            </div>
+        </div>
+
         <main id="tool-list">
             
-            <div id="recon" class="category-section">
+            <div id="subdomain" class="category-section">
                 <h2 class="section-title">Subdomain Enumeration</h2>
                 <div class="tools-grid">
                     <div class="card" data-name="sublist3r">
                         <h4>Sublist3r</h4>
-                        <p>Fast subdomains enumeration tool for penetration testers.</p>
-                        <a href="https://github.com/aboul3la/Sublist3r" target="_blank" class="btn">View on GitHub</a>
+                        <p>Fast subdomains enumeration tool.</p>
+                        <a href="https://github.com/aboul3la/Sublist3r" target="_blank" class="btn">GitHub</a>
                     </div>
                     <div class="card" data-name="amass">
                         <h4>Amass</h4>
                         <p>In-depth Attack Surface Mapping and Asset Discovery.</p>
-                        <a href="https://github.com/owasp-amass/amass" target="_blank" class="btn">View on GitHub</a>
+                        <a href="https://github.com/owasp-amass/amass" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="massdns">
+                        <h4>massdns</h4>
+                        <p>High-performance DNS stub resolver.</p>
+                        <a href="https://github.com/blechschmidt/massdns" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="findomain">
+                        <h4>Findomain</h4>
+                        <p>Fast and cross-platform subdomain enumerator.</p>
+                        <a href="https://github.com/Findomain/Findomain" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="sudomy">
+                        <h4>Sudomy</h4>
+                        <p>Analyze domains for automated reconnaissance.</p>
+                        <a href="https://github.com/screetsec/Sudomy" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="chaos-client">
+                        <h4>chaos-client</h4>
+                        <p>Go client to communicate with Chaos DNS API.</p>
+                        <a href="https://github.com/projectdiscovery/chaos-client" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="domained">
+                        <h4>domained</h4>
+                        <p>Multi-tool subdomain enumeration script.</p>
+                        <a href="https://github.com/cakinber/domained" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="shuffledns">
+                        <h4>shuffledns</h4>
+                        <p>Wrapper around massdns for active bruteforce.</p>
+                        <a href="https://github.com/projectdiscovery/shuffledns" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="puredns">
+                        <h4>puredns</h4>
+                        <p>Fast domain resolver and subdomain bruteforcing.</p>
+                        <a href="https://github.com/d3mondev/puredns" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="censys-subdomain-finder">
+                        <h4>Censys Finder</h4>
+                        <p>Enumerates subdomains using Censys cert logs.</p>
+                        <a href="https://github.com/christophetd/censys-subdomain-finder" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="turbolist3r">
+                        <h4>Turbolist3r</h4>
+                        <p>Subdomain enumeration tool with analysis features.</p>
+                        <a href="https://github.com/fleetcaptain/Turbolist3r" target="_blank" class="btn">GitHub</a>
+                    </div>
+                     <div class="card" data-name="tugarecon">
+                        <h4>tugarecon</h4>
+                        <p>Fast subdomains enumeration tool.</p>
+                        <a href="https://github.com/LordNeo/tugarecon" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="as3nt">
+                        <h4>as3nt</h4>
+                        <p>Another Subdomain ENumeration Tool.</p>
+                        <a href="https://github.com/cinerieus/as3nt" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="subra">
+                        <h4>Subra</h4>
+                        <p>Web-UI for subdomain enumeration.</p>
+                        <a href="https://github.com/si9int/Subra" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="substr3am">
+                        <h4>Substr3am</h4>
+                        <p>Passive reconnaissance by watching for SSL certificates.</p>
+                        <a href="https://github.com/nexxai/Substr3am" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="altdns">
+                        <h4>altdns</h4>
+                        <p>Generates permutations and mutations of subdomains.</p>
+                        <a href="https://github.com/infosec-au/altdns" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="brutesubs">
+                        <h4>brutesubs</h4>
+                        <p>Automation framework for bruteforcing via Docker.</p>
+                        <a href="https://github.com/anshumanbh/brutesubs" target="_blank" class="btn">GitHub</a>
+                    </div>
+                     <div class="card" data-name="dns-parallel-prober">
+                        <h4>dns-parallel</h4>
+                        <p>Parallelized domain name prober.</p>
+                        <a href="https://github.com/lorenzog/dns-parallel-prober" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="dnscan">
+                        <h4>dnscan</h4>
+                        <p>Python wordlist-based DNS subdomain scanner.</p>
+                        <a href="https://github.com/rbsec/dnscan" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="knock">
+                        <h4>knock</h4>
+                        <p>Python tool to enumerate subdomains via wordlist.</p>
+                        <a href="https://github.com/guelfoweb/knock" target="_blank" class="btn">GitHub</a>
+                    </div>
+                     <div class="card" data-name="hakrevdns">
+                        <h4>hakrevdns</h4>
+                        <p>Fast tool for performing reverse DNS lookups.</p>
+                        <a href="https://github.com/hakluke/hakrevdns" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="dnsx">
+                        <h4>dnsx</h4>
+                        <p>Fast and multi-purpose DNS toolkit.</p>
+                        <a href="https://github.com/projectdiscovery/dnsx" target="_blank" class="btn">GitHub</a>
                     </div>
                     <div class="card" data-name="subfinder">
-                        <h4>Subfinder</h4>
-                        <p>Subdomain discovery tool that discovers valid subdomains for websites.</p>
-                        <a href="https://github.com/projectdiscovery/subfinder" target="_blank" class="btn">View on GitHub</a>
+                        <h4>subfinder</h4>
+                        <p>Subdomain discovery tool that discovers valid subdomains.</p>
+                        <a href="https://github.com/projectdiscovery/subfinder" target="_blank" class="btn">GitHub</a>
                     </div>
                     <div class="card" data-name="assetfinder">
-                        <h4>Assetfinder</h4>
-                        <p>Find domains and subdomains related to a given domain.</p>
-                        <a href="https://github.com/tomnomnom/assetfinder" target="_blank" class="btn">View on GitHub</a>
+                        <h4>assetfinder</h4>
+                        <p>Finds domains/subdomains related to a given domain.</p>
+                        <a href="https://github.com/tomnomnom/assetfinder" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="crtndstry">
+                        <h4>crtndstry</h4>
+                        <p>Yet another subdomain finder.</p>
+                        <a href="https://github.com/nahamsec/crtndstry" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="vhostscan">
+                        <h4>VHostScan</h4>
+                        <p>Virtual host scanner that performs reverse lookups.</p>
+                        <a href="https://github.com/codingo/VHostScan" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="scilla">
+                        <h4>scilla</h4>
+                        <p>Info gathering (DNS, subdomains, ports, directories).</p>
+                        <a href="https://github.com/edoardottt/scilla" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="cero">
+                        <h4>cero</h4>
+                        <p>Scrape domain names from SSL certificates.</p>
+                        <a href="https://github.com/glebarez/cero" target="_blank" class="btn">GitHub</a>
+                    </div>
+                     <div class="card" data-name="shosubgo">
+                        <h4>shosubgo</h4>
+                        <p>Grab subdomains using Shodan API.</p>
+                        <a href="https://github.com/incogbyte/shosubgo" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="haktrails">
+                        <h4>haktrails</h4>
+                        <p>Golang client for querying SecurityTrails API.</p>
+                        <a href="https://github.com/hakluke/haktrails" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="bbot">
+                        <h4>bbot</h4>
+                        <p>A recursive internet scanner for hackers.</p>
+                        <a href="https://github.com/blacklanternsecurity/bbot" target="_blank" class="btn">GitHub</a>
                     </div>
                 </div>
             </div>
@@ -63,35 +229,116 @@
                 <h2 class="section-title">Port Scanning</h2>
                 <div class="tools-grid">
                     <div class="card" data-name="masscan">
-                        <h4>Masscan</h4>
-                        <p>TCP port scanner, spews SYN packets asynchronously. Scans entire internet in under 5 mins.</p>
-                        <a href="https://github.com/robertdavidgraham/masscan" target="_blank" class="btn">View on GitHub</a>
-                    </div>
-                    <div class="card" data-name="nmap">
-                        <h4>Nmap</h4>
-                        <p>The Network Mapper. The standard for network discovery and security auditing.</p>
-                        <a href="https://github.com/nmap/nmap" target="_blank" class="btn">View on GitHub</a>
+                        <h4>masscan</h4>
+                        <p>Asynchronous TCP port scanner.</p>
+                        <a href="https://github.com/robertdavidgraham/masscan" target="_blank" class="btn">GitHub</a>
                     </div>
                     <div class="card" data-name="rustscan">
                         <h4>RustScan</h4>
-                        <p>The Modern Port Scanner. Faster than Nmap, written in Rust.</p>
-                        <a href="https://github.com/RustScan/RustScan" target="_blank" class="btn">View on GitHub</a>
+                        <p>The Modern Port Scanner.</p>
+                        <a href="https://github.com/RustScan/RustScan" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="naabu">
+                        <h4>naabu</h4>
+                        <p>Fast port scanner written in Go.</p>
+                        <a href="https://github.com/projectdiscovery/naabu" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="nmap">
+                        <h4>nmap</h4>
+                        <p>The Network Mapper (Standard).</p>
+                        <a href="https://github.com/nmap/nmap" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="sandmap">
+                        <h4>sandmap</h4>
+                        <p>Nmap on steroids; simple CLI.</p>
+                        <a href="https://github.com/trimstray/sandmap" target="_blank" class="btn">GitHub</a>
+                    </div>
+                     <div class="card" data-name="scancannon">
+                        <h4>ScanCannon</h4>
+                        <p>Combines masscan speed with Nmap reliability.</p>
+                        <a href="https://github.com/johnnyxmas/ScanCannon" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="nrich">
+                        <h4>nrich</h4>
+                        <p>Analyze IPs for open ports/vulnerabilities.</p>
+                        <a href="https://gitlab.com/shodan-public/nrich" target="_blank" class="btn">GitLab</a>
                     </div>
                 </div>
             </div>
 
-            <div id="technologies" class="category-section">
-                <h2 class="section-title">Technologies & Fingerprinting</h2>
+            <div id="screens" class="category-section">
+                <h2 class="section-title">Screenshots</h2>
+                <div class="tools-grid">
+                    <div class="card" data-name="eyewitness">
+                        <h4>EyeWitness</h4>
+                        <p>Takes screenshots, server header info, default creds.</p>
+                        <a href="https://github.com/RedSiege/EyeWitness" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="aquatone">
+                        <h4>aquatone</h4>
+                        <p>Visual inspection across large amounts of hosts.</p>
+                        <a href="https://github.com/michenriksen/aquatone" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="screenshoteer">
+                        <h4>screenshoteer</h4>
+                        <p>Website screenshots and mobile emulations.</p>
+                        <a href="https://github.com/vladocar/screenshoteer" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="gowitness">
+                        <h4>gowitness</h4>
+                        <p>Golang screenshot utility using Chrome Headless.</p>
+                        <a href="https://github.com/sensepost/gowitness" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="witnessme">
+                        <h4>WitnessMe</h4>
+                        <p>Web inventory tool using Pyppeteer.</p>
+                        <a href="https://github.com/byt3bl33d3r/WitnessMe" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="eyeballer">
+                        <h4>eyeballer</h4>
+                        <p>AI-based tool for analyzing pentest screenshots.</p>
+                        <a href="https://github.com/bishopfox/eyeballer" target="_blank" class="btn">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tech" class="category-section">
+                <h2 class="section-title">Technologies</h2>
                 <div class="tools-grid">
                     <div class="card" data-name="wappalyzer">
-                        <h4>Wappalyzer</h4>
-                        <p>Identify technology on websites (CMS, frameworks, etc).</p>
-                        <a href="#" class="btn">View Tool</a>
+                        <h4>wappalyzer</h4>
+                        <p>Identifies technology on websites.</p>
+                        <a href="https://github.com/wappalyzer/wappalyzer" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="webanalyze">
+                        <h4>webanalyze</h4>
+                        <p>Port of Wappalyzer for mass scanning.</p>
+                        <a href="https://github.com/rverton/webanalyze" target="_blank" class="btn">GitHub</a>
                     </div>
                     <div class="card" data-name="whatweb">
-                        <h4>WhatWeb</h4>
-                        <p>Next-generation web scanner. Identifies CMS, blogging platforms, statistic/analytics packages.</p>
-                        <a href="https://github.com/urbanadventurer/WhatWeb" target="_blank" class="btn">View on GitHub</a>
+                        <h4>whatweb</h4>
+                        <p>Next generation web scanner.</p>
+                        <a href="https://github.com/urbanadventurer/WhatWeb" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="retirejs">
+                        <h4>retire.js</h4>
+                        <p>Scanner detecting vulnerable JS libraries.</p>
+                        <a href="https://github.com/RetireJS/retire.js" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="httpx">
+                        <h4>httpx</h4>
+                        <p>Fast, multi-purpose HTTP toolkit.</p>
+                        <a href="https://github.com/projectdiscovery/httpx" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="fingerprintx">
+                        <h4>fingerprintx</h4>
+                        <p>Service discovery on open ports.</p>
+                        <a href="https://github.com/praetorian-inc/fingerprintx" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="wafw00f">
+                        <h4>wafw00f</h4>
+                        <p>Identifies Web Application Firewalls (WAF).</p>
+                        <a href="https://github.com/EnableSecurity/wafw00f" target="_blank" class="btn">GitHub</a>
                     </div>
                 </div>
             </div>
@@ -100,51 +347,256 @@
                 <h2 class="section-title">Content Discovery</h2>
                 <div class="tools-grid">
                     <div class="card" data-name="gobuster">
-                        <h4>Gobuster</h4>
-                        <p>Directory/File, DNS and VHost busting tool written in Go.</p>
-                        <a href="https://github.com/OJ/gobuster" target="_blank" class="btn">View on GitHub</a>
+                        <h4>gobuster</h4>
+                        <p>Directory/File, DNS, and VHost busting.</p>
+                        <a href="https://github.com/OJ/gobuster" target="_blank" class="btn">GitHub</a>
                     </div>
                     <div class="card" data-name="feroxbuster">
-                        <h4>Feroxbuster</h4>
-                        <p>Fast, simple, recursive content discovery tool written in Rust.</p>
-                        <a href="https://github.com/epi052/feroxbuster" target="_blank" class="btn">View on GitHub</a>
+                        <h4>feroxbuster</h4>
+                        <p>Fast, simple, recursive content discovery (Rust).</p>
+                        <a href="https://github.com/epi052/feroxbuster" target="_blank" class="btn">GitHub</a>
                     </div>
                     <div class="card" data-name="dirsearch">
-                        <h4>Dirsearch</h4>
-                        <p>Web path scanner. Essential for finding hidden directories.</p>
-                        <a href="https://github.com/maurosoria/dirsearch" target="_blank" class="btn">View on GitHub</a>
+                        <h4>dirsearch</h4>
+                        <p>Web path scanner.</p>
+                        <a href="https://github.com/maurosoria/dirsearch" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="filebuster">
+                        <h4>filebuster</h4>
+                        <p>Extremely fast and flexible web fuzzer.</p>
+                        <a href="https://github.com/henshin/filebuster" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="gospider">
+                        <h4>gospider</h4>
+                        <p>Fast web spider written in Go.</p>
+                        <a href="https://github.com/jaeles-project/gospider" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="hakrawler">
+                        <h4>hakrawler</h4>
+                        <p>Simple, fast web crawler for endpoint discovery.</p>
+                        <a href="https://github.com/hakluke/hakrawler" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="katana">
+                        <h4>katana</h4>
+                        <p>Next-generation crawling framework.</p>
+                        <a href="https://github.com/projectdiscovery/katana" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="kiterunner">
+                        <h4>kiterunner</h4>
+                        <p>Fast API endpoint bruteforcer.</p>
+                        <a href="https://github.com/assetnote/kiterunner" target="_blank" class="btn">GitHub</a>
                     </div>
                 </div>
             </div>
 
-             <div id="xss" class="category-section">
-                <h2 class="section-title">XSS Injection</h2>
+            <div id="links" class="category-section">
+                <h2 class="section-title">Links & Parameters</h2>
                 <div class="tools-grid">
-                    <div class="card" data-name="dalfox">
-                        <h4>DalFox</h4>
-                        <p>DalFox is a powerful open source XSS scanning tool and parameter analyzer.</p>
-                        <a href="https://github.com/hahwul/dalfox" target="_blank" class="btn">View on GitHub</a>
+                    <div class="card" data-name="linkfinder">
+                        <h4>LinkFinder</h4>
+                        <p>Finds endpoints in JavaScript files.</p>
+                        <a href="https://github.com/GerbenJavado/LinkFinder" target="_blank" class="btn">GitHub</a>
                     </div>
-                    <div class="card" data-name="xsstrike">
-                        <h4>XSStrike</h4>
-                        <p>Most advanced XSS detection suite. It fuzzes parameters and detects WAFs.</p>
-                        <a href="https://github.com/s0md3v/XSStrike" target="_blank" class="btn">View on GitHub</a>
+                    <div class="card" data-name="waybackurls">
+                        <h4>waybackurls</h4>
+                        <p>Fetch all URLs from Wayback Machine.</p>
+                        <a href="https://github.com/tomnomnom/waybackurls" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="gau">
+                        <h4>gau</h4>
+                        <p>Fetch URLs from AlienVault, Wayback, Common Crawl.</p>
+                        <a href="https://github.com/lc/gau" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="getjs">
+                        <h4>getJS</h4>
+                        <p>Tool to quickly get all javascript sources.</p>
+                        <a href="https://github.com/003random/getJS" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="waymore">
+                        <h4>waymore</h4>
+                        <p>Find more URLs from the Wayback Machine.</p>
+                        <a href="https://github.com/xnl-h4ck3r/waymore" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="xnlinkfinder">
+                        <h4>xnLinkFinder</h4>
+                        <p>Discovers endpoints and parameters.</p>
+                        <a href="https://github.com/xnl-h4ck3r/xnLinkFinder" target="_blank" class="btn">GitHub</a>
+                    </div>
+                     <div class="card" data-name="parameth">
+                        <h4>parameth</h4>
+                        <p>Brute discovery of GET/POST parameters.</p>
+                        <a href="https://github.com/maK-/parameth" target="_blank" class="btn">GitHub</a>
                     </div>
                 </div>
             </div>
 
-             <div id="secrets" class="category-section">
-                <h2 class="section-title">Secrets & Git</h2>
+            <div id="git" class="category-section">
+                <h2 class="section-title">Git & Secrets</h2>
                 <div class="tools-grid">
-                    <div class="card" data-name="trufflehog">
+                    <div class="card" data-name="gittools">
+                        <h4>GitTools</h4>
+                        <p>Tools for pwn'ing websites with .git repositories.</p>
+                        <a href="https://github.com/internetwache/GitTools" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="gitjacker">
+                        <h4>gitjacker</h4>
+                        <p>Leak git repositories from misconfigured websites.</p>
+                        <a href="https://github.com/liamg/gitjacker" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="githunter">
+                        <h4>GitHunter</h4>
+                        <p>Searches Git repositories for interesting content.</p>
+                        <a href="https://github.com/digininja/GitHunter" target="_blank" class="btn">GitHub</a>
+                    </div>
+                     <div class="card" data-name="trufflehog">
                         <h4>TruffleHog</h4>
-                        <p>Searches through git repositories for high entropy strings and secrets.</p>
-                        <a href="https://github.com/trufflesecurity/trufflehog" target="_blank" class="btn">View on GitHub</a>
+                        <p>Searches through git repositories for secrets.</p>
+                        <a href="https://github.com/trufflesecurity/trufflehog" target="_blank" class="btn">GitHub</a>
                     </div>
-                    <div class="card" data-name="git-secrets">
-                        <h4>Git-secrets</h4>
-                        <p>Prevents you from committing secrets and credentials into git repositories.</p>
-                        <a href="https://github.com/awslabs/git-secrets" target="_blank" class="btn">View on GitHub</a>
+                    <div class="card" data-name="gato">
+                        <h4>Gato</h4>
+                        <p>GitHub Self-Hosted Runner Enumeration.</p>
+                        <a href="https://github.com/praetorian-inc/gato" target="_blank" class="btn">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="cloud" class="category-section">
+                <h2 class="section-title">Cloud & Buckets</h2>
+                <div class="tools-grid">
+                    <div class="card" data-name="s3scanner">
+                        <h4>S3Scanner</h4>
+                        <p>Scan for open AWS S3 buckets and dump contents.</p>
+                        <a href="https://github.com/sa7mon/S3Scanner" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="cloudscraper">
+                        <h4>CloudScraper</h4>
+                        <p>Enumerate targets in search of cloud resources.</p>
+                        <a href="https://github.com/jordanpotti/CloudScraper" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="s3viewer">
+                        <h4>s3viewer</h4>
+                        <p>Publicly open Amazon AWS S3 Bucket viewer.</p>
+                        <a href="https://github.com/SharonBrizinov/s3viewer" target="_blank" class="btn">GitHub</a>
+                    </div>
+                     <div class="card" data-name="festin">
+                        <h4>festin</h4>
+                        <p>S3 Bucket weakness discovery.</p>
+                        <a href="https://github.com/cr0hn/festin" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="cloudbrute">
+                        <h4>CloudBrute</h4>
+                        <p>Cloud enumerator.</p>
+                        <a href="https://github.com/0xsha/CloudBrute" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="s3cruze">
+                        <h4>S3Cruze</h4>
+                        <p>All-in-one AWS S3 bucket tool.</p>
+                        <a href="https://github.com/JR0ch17/S3Cruze" target="_blank" class="btn">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="cms" class="category-section">
+                <h2 class="section-title">CMS & WordPress</h2>
+                <div class="tools-grid">
+                    <div class="card" data-name="wpscan">
+                        <h4>wpscan</h4>
+                        <p>Black box WordPress security scanner.</p>
+                        <a href="https://github.com/wpscanteam/wpscan" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="cmsmap">
+                        <h4>CMSmap</h4>
+                        <p>Automates detection of security flaws in CMSs.</p>
+                        <a href="https://github.com/Dionach/CMSmap" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="wpspider">
+                        <h4>WPSpider</h4>
+                        <p>Dashboard for running wpscan.</p>
+                        <a href="https://github.com/cyc10n3/WPSpider" target="_blank" class="btn">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="utils" class="category-section">
+                <h2 class="section-title">Utilities</h2>
+                <div class="tools-grid">
+                    <div class="card" data-name="interactsh">
+                        <h4>interactsh</h4>
+                        <p>Detecting out-of-band interactions (OOB).</p>
+                        <a href="https://github.com/projectdiscovery/interactsh" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="asnmap">
+                        <h4>asnmap</h4>
+                        <p>Maps organization network ranges using ASN.</p>
+                        <a href="https://github.com/projectdiscovery/asnmap" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="uncover">
+                        <h4>uncover</h4>
+                        <p>Uses search engine APIs to discover hosts.</p>
+                        <a href="https://github.com/projectdiscovery/uncover" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="notify">
+                        <h4>notify</h4>
+                        <p>Stream output of tools to Slack/Discord.</p>
+                        <a href="https://github.com/projectdiscovery/notify" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="cvemap">
+                        <h4>cvemap</h4>
+                        <p>CLI for exploring vulnerability data.</p>
+                        <a href="https://github.com/projectdiscovery/cvemap" target="_blank" class="btn">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="wordlists" class="category-section">
+                <h2 class="section-title">Wordlists</h2>
+                <div class="tools-grid">
+                    <div class="card" data-name="seclists">
+                        <h4>SecLists</h4>
+                        <p>Collection of useful wordlists grouped by context.</p>
+                        <a href="https://github.com/danielmiessler/SecLists" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="assetnote">
+                        <h4>Assetnote Wordlists</h4>
+                        <p>Automated & Manual Wordlists.</p>
+                        <a href="https://github.com/assetnote/wordlists" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="rockyou">
+                        <h4>RockYou</h4>
+                        <p>The go-to wordlist for passwords.</p>
+                        <a href="https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt" target="_blank" class="btn">Download</a>
+                    </div>
+                    <div class="card" data-name="trickest">
+                        <h4>Trickest</h4>
+                        <p>Real-world infosec wordlists, updated regularly.</p>
+                        <a href="https://github.com/trickest/wordlists" target="_blank" class="btn">GitHub</a>
+                    </div>
+                    <div class="card" data-name="fuzzdb">
+                        <h4>Probable-Wordlists</h4>
+                        <p>Research on several types of wordlists.</p>
+                        <a href="https://github.com/berzerk0/Probable-Wordlists" target="_blank" class="btn">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="xss" class="category-section">
+                <h2 class="section-title">XSS Resources</h2>
+                <div class="tools-grid">
+                    <div class="card" data-name="xss guide 1">
+                        <h4>XSS Guide #1</h4>
+                        <p>Comprehensive Guide to Cross Site Scripting.</p>
+                        <a href="https://medium.com/@techmindxperts/a-comprehensive-guide-to-cross-site-scripting-xss-33814b84dfb3" target="_blank" class="btn">Read Article</a>
+                    </div>
+                    <div class="card" data-name="xss guide 2">
+                        <h4>XSS Guide #2</h4>
+                        <p>All About XSS Cross Site Scripting.</p>
+                        <a href="https://medium.com/@bug_vs_me/all-about-xss-cross-site-scripting-1bf764a39159" target="_blank" class="btn">Read Article</a>
+                    </div>
+                     <div class="card" data-name="xss guide 3">
+                        <h4>XSS Guide #3</h4>
+                        <p>XSS: What it is, how it works, how to prevent it.</p>
+                        <a href="https://medium.com/codelighthouse/xss-what-it-is-how-it-works-and-how-to-prevent-it-454629e3a0da" target="_blank" class="btn">Read Article</a>
                     </div>
                 </div>
             </div>
@@ -152,7 +604,10 @@
         </main>
     </div>
 
+    <footer>
+        <p>THIS SITE IS MADE BY <a href="https://instagram.com/bidush.exe" target="_blank">@bidush.exe</a></p>
+    </footer>
+
     <script src="script.js"></script>
 </body>
-
 </html>
