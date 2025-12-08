@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bug Bounty Hunter // Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Bug Bounty Hunters</h1>
+        <p class="subtitle">Methods, Checklists, and Automated Tools for the Modern Pentester</p>
+        
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search for tools (e.g., 'nmap', 'xss')..." onkeyup="filterTools()">
+        </div>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h3>Categories</h3>
+            <div class="nav-links">
+                <a href="#recon">Recon & Subdomains</a>
+                <a href="#port">Port Scanning</a>
+                <a href="#technologies">Technologies</a>
+                <a href="#content">Content Discovery</a>
+                <a href="#xss">XSS Injection</a>
+                <a href="#secrets">Secrets & Git</a>
+                <a href="#vuln">Vulnerability Scanners</a>
+            </div>
+        </aside>
+
+        <main id="tool-list">
+            
+            <div id="recon" class="category-section">
+                <h2 class="section-title">Subdomain Enumeration</h2>
+                <div class="tools-grid">
+                    <div class="card" data-name="sublist3r">
+                        <h4>Sublist3r</h4>
+                        <p>Fast subdomains enumeration tool for penetration testers.</p>
+                        <a href="https://github.com/aboul3la/Sublist3r" target="_blank" class="btn">View on GitHub</a>
+                    </div>
+                    <div class="card" data-name="amass">
+                        <h4>Amass</h4>
+                        <p>In-depth Attack Surface Mapping and Asset Discovery.</p>
+                        <a href="https://github.com/owasp-amass/amass" target="_blank" class="btn">View on GitHub</a>
+                    </div>
+                    <div class="card" data-name="subfinder">
+                        <h4>Subfinder</h4>
+                        <p>Subdomain discovery tool that discovers valid subdomains for websites.</p>
+                        <a href="https://github.com/projectdiscovery/subfinder" target="_blank" class="btn">View on GitHub</a>
+                    </div>
+                    <div class="card" data-name="assetfinder">
+                        <h4>Assetfinder</h4>
+                        <p>Find domains and subdomains related to a given domain.</p>
+                        <a href="https://github.com/tomnomnom/assetfinder" target="_blank" class="btn">View on GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="port" class="category-section">
+                <h2 class="section-title">Port Scanning</h2>
+                <div class="tools-grid">
+                    <div class="card" data-name="masscan">
+                        <h4>Masscan</h4>
+                        <p>TCP port scanner, spews SYN packets asynchronously. Scans entire internet in under 5 mins.</p>
+                        <a href="https://github.com/robertdavidgraham/masscan" target="_blank" class="btn">View on GitHub</a>
+                    </div>
+                    <div class="card" data-name="nmap">
+                        <h4>Nmap</h4>
+                        <p>The Network Mapper. The standard for network discovery and security auditing.</p>
+                        <a href="https://github.com/nmap/nmap" target="_blank" class="btn">View on GitHub</a>
+                    </div>
+                    <div class="card" data-name="rustscan">
+                        <h4>RustScan</h4>
+                        <p>The Modern Port Scanner. Faster than Nmap, written in Rust.</p>
+                        <a href="https://github.com/RustScan/RustScan" target="_blank" class="btn">View on GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="technologies" class="category-section">
+                <h2 class="section-title">Technologies & Fingerprinting</h2>
+                <div class="tools-grid">
+                    <div class="card" data-name="wappalyzer">
+                        <h4>Wappalyzer</h4>
+                        <p>Identify technology on websites (CMS, frameworks, etc).</p>
+                        <a href="#" class="btn">View Tool</a>
+                    </div>
+                    <div class="card" data-name="whatweb">
+                        <h4>WhatWeb</h4>
+                        <p>Next-generation web scanner. Identifies CMS, blogging platforms, statistic/analytics packages.</p>
+                        <a href="https://github.com/urbanadventurer/WhatWeb" target="_blank" class="btn">View on GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="content" class="category-section">
+                <h2 class="section-title">Content Discovery</h2>
+                <div class="tools-grid">
+                    <div class="card" data-name="gobuster">
+                        <h4>Gobuster</h4>
+                        <p>Directory/File, DNS and VHost busting tool written in Go.</p>
+                        <a href="https://github.com/OJ/gobuster" target="_blank" class="btn">View on GitHub</a>
+                    </div>
+                    <div class="card" data-name="feroxbuster">
+                        <h4>Feroxbuster</h4>
+                        <p>Fast, simple, recursive content discovery tool written in Rust.</p>
+                        <a href="https://github.com/epi052/feroxbuster" target="_blank" class="btn">View on GitHub</a>
+                    </div>
+                    <div class="card" data-name="dirsearch">
+                        <h4>Dirsearch</h4>
+                        <p>Web path scanner. Essential for finding hidden directories.</p>
+                        <a href="https://github.com/maurosoria/dirsearch" target="_blank" class="btn">View on GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+             <div id="xss" class="category-section">
+                <h2 class="section-title">XSS Injection</h2>
+                <div class="tools-grid">
+                    <div class="card" data-name="dalfox">
+                        <h4>DalFox</h4>
+                        <p>DalFox is a powerful open source XSS scanning tool and parameter analyzer.</p>
+                        <a href="https://github.com/hahwul/dalfox" target="_blank" class="btn">View on GitHub</a>
+                    </div>
+                    <div class="card" data-name="xsstrike">
+                        <h4>XSStrike</h4>
+                        <p>Most advanced XSS detection suite. It fuzzes parameters and detects WAFs.</p>
+                        <a href="https://github.com/s0md3v/XSStrike" target="_blank" class="btn">View on GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+             <div id="secrets" class="category-section">
+                <h2 class="section-title">Secrets & Git</h2>
+                <div class="tools-grid">
+                    <div class="card" data-name="trufflehog">
+                        <h4>TruffleHog</h4>
+                        <p>Searches through git repositories for high entropy strings and secrets.</p>
+                        <a href="https://github.com/trufflesecurity/trufflehog" target="_blank" class="btn">View on GitHub</a>
+                    </div>
+                    <div class="card" data-name="git-secrets">
+                        <h4>Git-secrets</h4>
+                        <p>Prevents you from committing secrets and credentials into git repositories.</p>
+                        <a href="https://github.com/awslabs/git-secrets" target="_blank" class="btn">View on GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
