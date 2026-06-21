@@ -4,65 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KRNLHUB // Red Team Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <div class="header-content">
-            <div class="hamburger" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            
+    <button id="menu-toggle" aria-label="Toggle Menu">☰</button>
+    
+    <div id="sidebar">
+        <h3 class="sidebar-title">// SYSTEM_ROOT</h3>
+        <div class="nav-links">
+            <a href="roadmap.html" class="roadmap-link">// VIEW FINDING ROADMAP</a>
+            <hr class="nav-divider">
+            <a href="#subdomain">Subdomain Enum</a>
+            <a href="#port">Port Scanning</a>
+            <a href="#screens">Screenshots</a>
+            <a href="#tech">Technologies</a>
+            <a href="#content">Content Discovery</a>
+            <a href="#links">Links & JS</a>
+            <a href="#git">Git & Secrets</a>
+            <a href="#cloud">Cloud & Buckets</a>
+            <a href="#cms">CMS & WP</a>
+            <a href="#utils">Utilities</a>
+            <a href="#wordlists">Wordlists</a>
+            <a href="#xss">XSS Guides</a>
+        </div>
+    </div>
+
+    <main class="container">
+        <header>
             <h1>KRNLHUB</h1>
-        </div>
-        
-        <p class="subtitle">Methods, Checklists, and Automated Tools</p>
-        
-        <div class="search-container">
-            <input type="text" id="searchInput" placeholder="Search arsenal (e.g., 'bucket', 'xss', 'brute')..." onkeyup="filterTools()">
-        </div>
-    </header>
-
-    <div class="container">
-        <aside class="sidebar">
-            <h3>// SYSTEM_ROOT</h3>
-            <div class="nav-links">
-                <a href="#subdomain" onclick="closeMenu()">Subdomain Enum</a>
-                <a href="#port" onclick="closeMenu()">Port Scanning</a>
-                <a href="#screens" onclick="closeMenu()">Screenshots</a>
-                <a href="#tech" onclick="closeMenu()">Technologies</a>
-                <a href="#content" onclick="closeMenu()">Content Discovery</a>
-                <a href="#links" onclick="closeMenu()">Links & JS</a>
-                <a href="#git" onclick="closeMenu()">Git & Secrets</a>
-                <a href="#cloud" onclick="closeMenu()">Cloud & Buckets</a>
-                <a href="#cms" onclick="closeMenu()">CMS & WP</a>
-                <a href="#utils" onclick="closeMenu()">Utilities</a>
-                <a href="#wordlists" onclick="closeMenu()">Wordlists</a>
-                <a href="#xss" onclick="closeMenu()">XSS Guides</a>
+            <p class="subtitle">Methods, Checklists, and Automated Tools</p>
+            
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search arsenal (e.g., 'bucket', 'xss', 'brute')..." onkeyup="filterTools()">
             </div>
-        </aside>
+        </header>
 
-        <div id="mobile-menu" class="mobile-menu">
-            <div class="mobile-nav-links">
-                <a href="#subdomain" onclick="toggleMenu()">Subdomain Enum</a>
-                <a href="#port" onclick="toggleMenu()">Port Scanning</a>
-                <a href="#screens" onclick="toggleMenu()">Screenshots</a>
-                <a href="#tech" onclick="toggleMenu()">Technologies</a>
-                <a href="#content" onclick="toggleMenu()">Content Discovery</a>
-                <a href="#links" onclick="toggleMenu()">Links & JS</a>
-                <a href="#git" onclick="toggleMenu()">Git & Secrets</a>
-                <a href="#cloud" onclick="toggleMenu()">Cloud & Buckets</a>
-                <a href="#cms" onclick="toggleMenu()">CMS & WP</a>
-                <a href="#utils" onclick="toggleMenu()">Utilities</a>
-                <a href="#wordlists" onclick="toggleMenu()">Wordlists</a>
-                <a href="#xss" onclick="toggleMenu()">XSS Guides</a>
-            </div>
-        </div>
-
-        <main id="tool-list">
+        <div id="tool-list">
             
             <div id="subdomain" class="category-section">
                 <h2 class="section-title">Subdomain Enumeration</h2>
@@ -601,14 +580,13 @@
                 </div>
             </div>
 
-        </main>
-    </div>
+        </div>
+    </main>
 
     <footer>
-        <p>THIS SITE IS MADE BY <a href="https://instagram.com/bidushhh_" target="_blank">@bidushhh_</a></p>
+        <p>THIS SITE IS MADE BY <a href="https://instagram.com/0xd3adbeef" target="_blank">@0xd3adbeef</a></p>
     </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
-
